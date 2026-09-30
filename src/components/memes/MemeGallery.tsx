@@ -28,12 +28,18 @@ export const MemeGallery = () => {
           icon={<ImageIcon color="primary" />}
         />
         <Card sx={{p: 4, textAlign: 'center'}}>
-          <Stack spacing={2} alignItems="center">
+          <Stack spacing={2} sx={{
+            alignItems: "center"
+          }}>
             <ImageIcon sx={{fontSize: 64, color: 'text.secondary', opacity: 0.5}} />
-            <Typography variant="h6" color="text.secondary">
+            <Typography variant="h6" sx={{
+              color: "text.secondary"
+            }}>
               Пока нет мемов
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{
+              color: "text.secondary"
+            }}>
               Загрузите первый мем, чтобы начать коллекцию
             </Typography>
           </Stack>
@@ -49,7 +55,7 @@ export const MemeGallery = () => {
         subtitle={`${memes.length} ${memes.length === 1 ? 'мем' : memes.length < 5 ? 'мема' : 'мемов'}`}
         icon={<ImageIcon color="primary" />}
       />
-      
+
       {error && (
         <Alert severity="error" onClose={() => dispatch(clearError())}>
           {error}
@@ -58,7 +64,7 @@ export const MemeGallery = () => {
 
       <Grid container spacing={2}>
         {memes.map((meme) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={meme.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={meme.id}>
             <Card
               sx={{
                 overflow: 'hidden',
@@ -84,15 +90,14 @@ export const MemeGallery = () => {
               <Box sx={{p: 1.5}}>
                 <Typography
                   variant="caption"
-                  color="text.secondary"
+                  title={meme.fileName}
                   sx={{
+                    color: "text.secondary",
                     display: 'block',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap'
-                  }}
-                  title={meme.fileName}
-                >
+                  }}>
                   {meme.fileName}
                 </Typography>
               </Box>

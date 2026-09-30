@@ -11,7 +11,12 @@ const actions = [
 
 export const ProfileQuickActions = () => (
   <Card sx={{ p: 3, mt: 2 }}>
-    <Typography variant="subtitle2" color="text.secondary" mb={1}>
+    <Typography
+      variant="subtitle2"
+      sx={{
+        color: "text.secondary",
+        mb: 1
+      }}>
       API интеграции
     </Typography>
     <Stack spacing={1.5}>

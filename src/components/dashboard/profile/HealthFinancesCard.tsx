@@ -7,13 +7,15 @@ interface ProfileOverviewProps {
 }
 
 export const HealthFinancesCard = ({ profile }: ProfileOverviewProps) => (
-    <Grid item xs={12} md={4}>
-        <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+    <Grid size={{ xs: 12, md: 4 }}>
+        <Typography variant="subtitle2" gutterBottom sx={{
+            color: "text.secondary"
+        }}>
             Здоровье & финансы
         </Typography>
         <Grid container spacing={2}>
             {profile.health.map((metric) => (
-                <Grid key={metric.id} item xs={12} sm={6} md={12}>
+                <Grid key={metric.id} size={{ xs: 12, sm: 6, md: 12 }}>
                     <MetricCard
                         label={`${metric.label}`}
                         value={`${metric.currentValue} ${metric.unit}`}

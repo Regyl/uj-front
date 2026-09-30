@@ -203,18 +203,20 @@ export const SignInPage = () => {
                           onChange={(e) => setPassword(e.target.value)}
                           required
                           variant="outlined"
-                          InputProps={{
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <IconButton
-                                  onClick={() => setShowPassword(!showPassword)}
-                                  edge="end"
-                                  size="small"
-                                >
-                                  {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                                </IconButton>
-                              </InputAdornment>
-                            )
+                          slotProps={{
+                            input: {
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <IconButton
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    edge="end"
+                                    size="small"
+                                  >
+                                    {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                                  </IconButton>
+                                </InputAdornment>
+                              )
+                            }
                           }}
                         />
                         <Box sx={{display: 'flex', justifyContent: 'flex-end', mt: 1}}>
@@ -290,7 +292,12 @@ export const SignInPage = () => {
                   </Stack>
 
                   {/* Footer Link */}
-                  <Typography variant="body2" color="text.secondary" textAlign="center">
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "text.secondary",
+                      textAlign: "center"
+                    }}>
                     Don't have an account yet?{' '}
                     <Typography
                       component="button"
@@ -369,18 +376,20 @@ export const SignInPage = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                         variant="outlined"
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <IconButton
-                                onClick={() => setShowPassword(!showPassword)}
-                                edge="end"
-                                size="small"
-                              >
-                                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                              </IconButton>
-                            </InputAdornment>
-                          )
+                        slotProps={{
+                          input: {
+                            endAdornment: (
+                              <InputAdornment position="end">
+                                <IconButton
+                                  onClick={() => setShowPassword(!showPassword)}
+                                  edge="end"
+                                  size="small"
+                                >
+                                  {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                                </IconButton>
+                              </InputAdornment>
+                            )
+                          }
                         }}
                       />
 
@@ -421,14 +430,21 @@ export const SignInPage = () => {
                       />
                     }
                     label={
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" sx={{
+                        color: "text.secondary"
+                      }}>
                         Please keep me updated by email with the latest news, research findings, reward programs, event updates.
                       </Typography>
                     }
                   />
 
                   {/* Footer Link */}
-                  <Typography variant="body2" color="text.secondary" textAlign="center">
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "text.secondary",
+                      textAlign: "center"
+                    }}>
                     Already have an account?{' '}
                     <Typography
                       component="button"

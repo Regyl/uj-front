@@ -10,7 +10,12 @@ interface ActivityHighlightsProps {
 export const ActivityHighlights = ({ profile }: ActivityHighlightsProps) => (
   <Card sx={{ p: 3 }}>
     <Stack spacing={2}>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Stack
+        direction="row"
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}>
         <Typography variant="h6">Активность</Typography>
         <Chip icon={<LocalFireDepartmentIcon />} label="живой поток" color="secondary" />
       </Stack>
@@ -19,17 +24,18 @@ export const ActivityHighlights = ({ profile }: ActivityHighlightsProps) => (
           key={activity.id}
           direction="row"
           spacing={2}
-          alignItems="center"
           sx={{
+            alignItems: "center",
             p: 1.5,
             borderRadius: 2,
             bgcolor: 'rgba(255,255,255,0.02)'
-          }}
-        >
+          }}>
           <AccessTimeIcon fontSize="small" color="action" />
           <Stack spacing={0.5}>
             <Typography variant="subtitle2">{activity.summary}</Typography>
-            <Typography variant="caption" color="text.secondary">
+            <Typography variant="caption" sx={{
+              color: "text.secondary"
+            }}>
               {new Date(activity.timestamp).toLocaleString('ru-RU', {
                 hour: '2-digit',
                 minute: '2-digit',

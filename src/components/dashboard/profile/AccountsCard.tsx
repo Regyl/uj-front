@@ -24,8 +24,10 @@ export const AccountsCard = () => {
     if (error) return <DefaultErrorLoading/>
 
     return (
-        <Grid item xs={12} md={4}>
-            <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+        <Grid size={{ xs: 12, md: 4 }}>
+            <Typography variant="subtitle2" gutterBottom sx={{
+                color: "text.secondary"
+            }}>
                 Аккаунты
             </Typography>
             <Stack spacing={1.5}>
@@ -33,16 +35,22 @@ export const AccountsCard = () => {
                     <Stack
                         key={account.id}
                         direction={{ xs: 'column', sm: 'row' }}
-                        justifyContent="space-between"
-                        alignItems={{ xs: 'flex-start', sm: 'center' }}
                         sx={{
+                            justifyContent: "space-between",
+                            alignItems: { xs: 'flex-start', sm: 'center' },
                             border: '1px solid rgba(255,255,255,0.05)',
                             borderRadius: 2,
                             p: 1.5,
                             gap: 1.5
-                        }}
-                    >
-                        <Stack direction="row" spacing={1.5} alignItems="center" sx={{ minWidth: 0, flex: 1 }}>
+                        }}>
+                        <Stack
+                            direction="row"
+                            spacing={1.5}
+                            sx={{
+                                alignItems: "center",
+                                minWidth: 0,
+                                flex: 1
+                            }}>
                             <Box
                                 sx={{
                                     width: 40,
@@ -61,7 +69,9 @@ export const AccountsCard = () => {
                                 <Typography variant="subtitle2" sx={{ wordBreak: 'break-word' }}>
                                     {account.originUrl}
                                 </Typography>
-                                <Typography variant="caption" color="text.secondary">
+                                <Typography variant="caption" sx={{
+                                    color: "text.secondary"
+                                }}>
                                     {account.usernameValue}
                                 </Typography>
                             </Stack>

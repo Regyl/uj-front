@@ -28,15 +28,27 @@ export const MetricCard = ({ label, value, helper, progress, accent = 'primary' 
         <Box>
           {hasTwoLines ? (
             <Stack spacing={0.25}>
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.2 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.2
+                }}>
                 {labelParts[0]}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.2 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.2
+                }}>
                 {labelParts.slice(1).join(' ')}
               </Typography>
             </Stack>
           ) : (
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{
+              color: "text.secondary"
+            }}>
               {label}
             </Typography>
           )}
@@ -45,7 +57,12 @@ export const MetricCard = ({ label, value, helper, progress, accent = 'primary' 
           {value}
         </Typography>
         {helper && (
-          <Typography variant="caption" color="text.secondary" sx={{ mt: -0.5 }}>
+          <Typography
+            variant="caption"
+            sx={{
+              color: "text.secondary",
+              mt: -0.5
+            }}>
             {helper}
           </Typography>
         )}

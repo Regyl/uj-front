@@ -93,7 +93,9 @@ export const AuthCallbackPage = () => {
         }}
       >
         <CircularProgress size={48} />
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="body1" sx={{
+          color: "text.secondary"
+        }}>
           Завершение авторизации...
         </Typography>
       </Box>

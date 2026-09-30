@@ -6,20 +6,30 @@ interface ProfileOverviewProps {
 }
 
 export const ProfileCard = ({ profile }: ProfileOverviewProps) => (
-    <Grid item xs={12} md={4}>
-        <Stack spacing={2} alignItems="center">
+    <Grid size={{ xs: 12, md: 4 }}>
+        <Stack spacing={2} sx={{
+            alignItems: "center"
+        }}>
             <Avatar src={profile.identity.avatar} sx={{ width: 96, height: 96 }} />
-            <Stack spacing={0.25} textAlign="center">
+            <Stack spacing={0.25} sx={{
+                textAlign: "center"
+            }}>
                 <Typography variant="h5">{profile.identity.fullName}</Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" sx={{
+                    color: "text.secondary"
+                }}>
                     {profile.identity.headline}
                 </Typography>
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" sx={{
+                    color: "text.secondary"
+                }}>
                     {profile.identity.city} · {profile.identity.timezone}
                 </Typography>
             </Stack>
             <Box sx={{ width: '100%' }}>
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" sx={{
+                    color: "text.secondary"
+                }}>
                     Focus map
                 </Typography>
                 <LinearProgress

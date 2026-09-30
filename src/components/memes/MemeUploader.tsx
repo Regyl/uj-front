@@ -105,11 +105,15 @@ export const MemeUploader = () => {
               disabled={uploading}
             />
             
-            <Stack spacing={2} alignItems="center">
+            <Stack spacing={2} sx={{
+              alignItems: "center"
+            }}>
               {uploading ? (
                 <>
                   <LinearProgress sx={{width: '100%', maxWidth: 300}} />
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" sx={{
+                    color: "text.secondary"
+                  }}>
                     Загрузка...
                   </Typography>
                 </>
@@ -117,10 +121,14 @@ export const MemeUploader = () => {
                 <>
                   <CloudUploadIcon sx={{fontSize: 48, color: 'text.secondary'}} />
                   <Stack spacing={0.5}>
-                    <Typography variant="body1" fontWeight={600}>
+                    <Typography variant="body1" sx={{
+                      fontWeight: 600
+                    }}>
                       Перетащите файл сюда или нажмите для выбора
                     </Typography>
-                    <Typography variant="caption" color="text.secondary">
+                    <Typography variant="caption" sx={{
+                      color: "text.secondary"
+                    }}>
                       Поддерживаются изображения до 10MB
                     </Typography>
                   </Stack>

@@ -10,7 +10,14 @@ interface AppShellProps {
 }
 
 export const AppShell = ({ profile, children }: AppShellProps) => (
-  <Stack direction="row" minHeight="100vh" bgcolor="background.default" sx={{ width: '100%', overflowX: 'hidden' }}>
+  <Stack
+    direction="row"
+    sx={{
+      minHeight: "100vh",
+      bgcolor: "background.default",
+      width: '100%',
+      overflowX: 'hidden'
+    }}>
     <NavRail />
     <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
       <AppHeader profile={profile} />

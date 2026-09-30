@@ -70,7 +70,9 @@ const TodoItem = ({todo, onToggleComplete, onDelete}: TodoItemProps) => {
             }}
         >
             <CardContent>
-                <Stack direction="row" spacing={2} alignItems="flex-start">
+                <Stack direction="row" spacing={2} sx={{
+                    alignItems: "flex-start"
+                }}>
                     <Checkbox
                         checked={todo.completed}
                         onChange={handleToggleComplete}
@@ -81,7 +83,13 @@ const TodoItem = ({todo, onToggleComplete, onDelete}: TodoItemProps) => {
 
                     <Box sx={{flex: 1, minWidth: 0}}>
                         <Stack spacing={1}>
-                            <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap">
+                            <Stack
+                                direction="row"
+                                spacing={1}
+                                sx={{
+                                    alignItems: "center",
+                                    flexWrap: "wrap"
+                                }}>
                                 <Typography
                                     variant="h6"
                                     sx={{
@@ -104,13 +112,12 @@ const TodoItem = ({todo, onToggleComplete, onDelete}: TodoItemProps) => {
                             {todo.description && (
                                 <Typography
                                     variant="body2"
-                                    color="text.secondary"
                                     sx={{
+                                        color: "text.secondary",
                                         textDecoration: todo.completed ? 'line-through' : 'none',
                                         whiteSpace: 'pre-wrap',
                                         wordBreak: 'break-word'
-                                    }}
-                                >
+                                    }}>
                                     {todo.description}
                                 </Typography>
                             )}
@@ -172,12 +179,18 @@ export const TodoList = () => {
                     icon={<TaskIcon color="primary"/>}
                 />
                 <Card sx={{p: 4, textAlign: 'center'}}>
-                    <Stack spacing={2} alignItems="center">
+                    <Stack spacing={2} sx={{
+                        alignItems: "center"
+                    }}>
                         <TaskIcon sx={{fontSize: 64, color: 'text.secondary', opacity: 0.5}}/>
-                        <Typography variant="h6" color="text.secondary">
+                        <Typography variant="h6" sx={{
+                            color: "text.secondary"
+                        }}>
                             Пока нет задач
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" sx={{
+                            color: "text.secondary"
+                        }}>
                             Создайте первую задачу, чтобы начать работу
                         </Typography>
                     </Stack>

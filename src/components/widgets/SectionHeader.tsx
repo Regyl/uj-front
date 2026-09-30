@@ -10,14 +10,24 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({ title, subtitle, actionLabel, onAction, icon }: SectionHeaderProps) => (
-  <Stack direction="row" justifyContent="space-between" alignItems="center" mb={3}>
+  <Stack
+    direction="row"
+    sx={{
+      justifyContent: "space-between",
+      alignItems: "center",
+      mb: 3
+    }}>
     <Stack spacing={0.5}>
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack direction="row" spacing={1} sx={{
+        alignItems: "center"
+      }}>
         {icon}
         <Typography variant="h5">{title}</Typography>
       </Stack>
       {subtitle && (
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{
+          color: "text.secondary"
+        }}>
           {subtitle}
         </Typography>
       )}

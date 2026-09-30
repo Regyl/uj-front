@@ -16,7 +16,9 @@ const severityColor: Record<string, 'default' | 'primary' | 'warning' | 'error' 
 export const SecurityPanel = ({ profile }: SecurityPanelProps) => (
   <Card sx={{ p: 3, height: '100%' }}>
     <Stack spacing={2}>
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack direction="row" spacing={1} sx={{
+        alignItems: "center"
+      }}>
         <SecurityIcon color="primary" />
         <Typography variant="h6">Security Pulse</Typography>
       </Stack>
@@ -30,7 +32,12 @@ export const SecurityPanel = ({ profile }: SecurityPanelProps) => (
             bgcolor: 'rgba(255,255,255,0.03)'
           }}
         >
-          <Stack direction="row" justifyContent="space-between" alignItems="center">
+          <Stack
+            direction="row"
+            sx={{
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}>
             <Typography variant="subtitle2">{signal.title}</Typography>
             <Chip
               icon={<WarningAmberIcon />}
@@ -40,10 +47,14 @@ export const SecurityPanel = ({ profile }: SecurityPanelProps) => (
               variant="outlined"
             />
           </Stack>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" sx={{
+            color: "text.secondary"
+          }}>
             {signal.description}
           </Typography>
-          <Typography variant="caption" color="text.secondary">
+          <Typography variant="caption" sx={{
+            color: "text.secondary"
+          }}>
             Проверено {new Date(signal.lastChecked).toLocaleString('ru-RU', { day: 'numeric', month: 'short' })}
           </Typography>
         </Stack>

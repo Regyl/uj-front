@@ -82,8 +82,10 @@ export const TodoForm = () => {
                                 required
                                 fullWidth
                                 disabled={creating}
-                                inputProps={{maxLength: 200}}
                                 helperText={`${title.length}/200`}
+                                slotProps={{
+                                    htmlInput: {maxLength: 200}
+                                }}
                             />
 
                             <TextField
@@ -94,8 +96,10 @@ export const TodoForm = () => {
                                 multiline
                                 rows={4}
                                 disabled={creating}
-                                inputProps={{maxLength: 1000}}
                                 helperText={`${description.length}/1000`}
+                                slotProps={{
+                                    htmlInput: {maxLength: 1000}
+                                }}
                             />
 
                             <FormControl fullWidth>

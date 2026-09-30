@@ -50,12 +50,18 @@ export const ConnectedServicesList = ({catalog}: ConnectedServicesListProps) => 
                 />
                 <Card>
                     <CardContent sx={{p: 4, textAlign: 'center'}}>
-                        <Stack spacing={2} alignItems="center">
+                        <Stack spacing={2} sx={{
+                            alignItems: "center"
+                        }}>
                             <ExtensionIcon sx={{fontSize: 64, color: 'text.secondary', opacity: 0.5}}/>
-                            <Typography variant="h6" color="text.secondary">
+                            <Typography variant="h6" sx={{
+                                color: "text.secondary"
+                            }}>
                                 Нет подключенных сервисов
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" sx={{
+                                color: "text.secondary"
+                            }}>
                                 Подключите сервисы для начала работы
                             </Typography>
                         </Stack>
@@ -75,7 +81,7 @@ export const ConnectedServicesList = ({catalog}: ConnectedServicesListProps) => 
 
             <Grid container spacing={2}>
                 {services.map((service) => (
-                    <Grid item xs={12} sm={6} md={4} key={service.id}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={service.id}>
                         <Card
                             sx={{
                                 height: '100%',
@@ -88,7 +94,9 @@ export const ConnectedServicesList = ({catalog}: ConnectedServicesListProps) => 
                         >
                             <CardContent sx={{p: 2.5}}>
                                 <Stack spacing={2}>
-                                    <Stack direction="row" spacing={1.5} alignItems="center">
+                                    <Stack direction="row" spacing={1.5} sx={{
+                                        alignItems: "center"
+                                    }}>
                                         {service.url && (
                                             <Box
                                                 component="img"
@@ -121,7 +129,12 @@ export const ConnectedServicesList = ({catalog}: ConnectedServicesListProps) => 
                                     </Stack>
 
                                     {service.description && (
-                                        <Typography variant="body2" color="text.secondary" sx={{mt: 1}}>
+                                        <Typography
+                                            variant="body2"
+                                            sx={{
+                                                color: "text.secondary",
+                                                mt: 1
+                                            }}>
                                             {service.description}
                                         </Typography>
                                     )}

@@ -47,9 +47,17 @@ export const AppHeader = ({ profile }: AppHeaderProps) => {
         borderBottom: '1px solid rgba(255,255,255,0.05)'
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={3}>
+      <Stack
+        direction="row"
+        spacing={3}
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}>
         <Stack spacing={0.5}>
-          <Typography variant="overline" color="text.secondary">
+          <Typography variant="overline" sx={{
+            color: "text.secondary"
+          }}>
             unfriendly jarvis
           </Typography>
           <Typography variant="h4">Personal OS</Typography>
@@ -81,11 +89,13 @@ export const AppHeader = ({ profile }: AppHeaderProps) => {
             onClick={handleClose}
             transformOrigin={{ horizontal: 'right', vertical: 'top' }}
             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-            PaperProps={{
-              sx: {
-                mt: 1.5,
-                minWidth: 200,
-                bgcolor: 'background.paper'
+            slotProps={{
+              paper: {
+                sx: {
+                  mt: 1.5,
+                  minWidth: 200,
+                  bgcolor: 'background.paper'
+                }
               }
             }}
           >
